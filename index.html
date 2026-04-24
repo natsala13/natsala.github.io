@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
 
-    <meta property="og:title" content="Monkey See, Monkey Do: Harnessing Self-attention in Motion Diffusion for Zero-shot Motion Transfer"/>
-    <meta property="og:url" content="https://MonkeySeeDoCG.github.io"/>
+    <meta property="og:title" content="MultiAct: Text-to-Motion Generation from Composite Text via Tailored Attention Guidance"/>
+    <meta property="og:url" content="https://natsala.github.io"/>
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
 
 
-    <title>Monkey See, Monkey Do: Harnessing Self-attention in Motion Diffusion for Zero-shot Motion Transfer</title>
+    <title>MultiAct: Text-to-Motion Generation from Composite Text via Tailored Attention Guidance</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQ3PYPGJRH"></script>
     <script>
@@ -55,8 +55,8 @@
         <div class="container is-max-widescreen">
             <!-- <div class="columns is-centered"> -->
             <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">Monkey See, Monkey Do (MoMo)</h1>
-                <h2 class="title is-2 publication-title">Harnessing Self-attention in Motion Diffusion for Zero-shot Motion Transfer</h2>
+                <h1 class="title is-1 publication-title">MultiAct</h1>
+                <h2 class="title is-2 publication-title">Text-to-Motion Generation from Composite Text via Tailored Attention Guidance</h2>
             </div>
         </div>
     </div>
@@ -65,7 +65,7 @@
 <section class="conference-name-block">
     <div class="column has-text-centered">
         <div class="title is-4 conference-name">
-            SIGGRAPH Asia 2024 Conference 
+            SIGGRAPH Asia 2026 Conference 
         </div>
     </div>
 </section>
@@ -91,15 +91,13 @@
         <div class="column has-text-centered">
             <div class="is-size-4 publication-authors">
                 <span class="author-block">
-                    <a href="https://sigal-raab.github.io/" target="_blank">Sigal Raab<sup>1</sup></a>,
-                    <a href="https://www.linkedin.com/in/inbar-gat-3212501ba/" target="_blank">Inbar Gat<sup>1</sup></a>,
                     <a href="https://www.linkedin.com/in/nathan-sala-0aa9b4179/" target="_blank">Nathan Sala<sup>1</sup></a>,
-                    <a href="https://guytevet.github.io/" target="_blank">Guy Tevet<sup>1</sup></a>,
-                    <a href="https://www.linkedin.com/in/rotem-shalev/" target="_blank">Rotem Shalev-Arkushin<sup>1</sup></a>,
-                    <br/>
-                    <a href="https://www.ohadf.com/" target="_blank"> Ohad Fried<sup>2</sup></a>,
-                    <a href="https://www.cs.tau.ac.il/~amberman/" target="_blank">Amit H. Bermano<sup>1</sup></a>,
+                    <a href="https://www.linkedin.com/in/ofir-abramovich-063804168/" target="_blank">Ofir Abramovich<sup>1</sup></a>,
+                    <a href="https://faculty.runi.ac.il/arik/site/index.asp/" target="_blank">Ariel Shamir<sup>1</sup></a>,
                     <a href="https://danielcohenor.com/" target="_blank">Daniel Cohen-Or<sup>1</sup></a></span>
+                    <br/>
+                    <a href="https://andreasaristidou.com/" target="_blank">Andreas Aristidou<sup>1</sup></a>,
+                    <a href=" https://sigal-raab.github.io/" target="_blank"> Sigal Raab<sup>2</sup></a>,
                     <sup></sup></span>
             </div>
         </div>
@@ -123,7 +121,7 @@
                             </span>
 
                             <span class="link-block">
-                                <a href="https://github.com/MonkeySeeDoCG/MoMo" target="_blank"
+                                <a href="https://github.com/your-org/MultiAct" target="_blank"
                                 class="external-link button is-normal is-rounded">
                                 <span class="icon">
                                 <i class="fab fa-github"></i>
@@ -187,31 +185,13 @@
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
                     <p>
-                        Given the remarkable results of motion synthesis with diffusion models, a
-                        natural question arises: how can we effectively leverage these models for mo-
-                        tion editing? Existing diffusion-based motion editing methods overlook the
-                        profound potential of the prior embedded within the weights of pre-trained
-                        models, which enables manipulating the latent feature space; hence, they
-                        primarily center on handling the motion space. In this work, we explore the
-                        attention mechanism of pre-trained motion diffusion models. We uncover the
-                        roles and interactions of attention elements in capturing and representing
-                        intricate human motion patterns, and carefully integrate these elements to
-                        transfer a leader motion to a follower one while maintaining the nuanced
-                        characteristics of the follower, resulting in zero-shot motion transfer. Editing
-                        features associated with selected motions allows us to confront a challenge
-                        observed in prior motion diffusion approaches, which use general directives
-                        (e.g., text, music) for editing, ultimately failing to convey subtle nuances
-                        effectively. Our work is inspired by how a monkey closely imitates what it
-                        sees while maintaining its unique motion patterns; hence we call it Monkey
-                        see, Monkey Do, and dub it MoMo. Employing our technique enables accom-
-                        plishing tasks such as synthesizing out-of-distribution motions, style transfer,
-                        and spatial editing. Furthermore, diffusion inversion is seldom employed
-                        for motions; as a result, editing efforts focus on generated motions, limiting
-                        the editability of real ones. MoMo harnesses motion inversion, extending its
-                        application to both real and generated motions. Experimental results show
-                        the advantage of our approach over the current art. In particular, unlike
-                        methods tailored for specific applications through training, our approach is
-                        applied at inference time, requiring no training. 
+                        Text-to-motion generation has progressed rapidly in recent years, offering an expressive interface for animation and human–computer interaction.
+                        However, current models remain brittle when handling prompts that describe multiple actions occurring at the same time. Rather than realizing all components of a composite description, models frequently prioritize a single dominant action and neglect the rest, leading to incomplete and ambiguous motion.
+                        We present MultiAct, an unpaired, inference-time framework for compositional text-to-motion synthesis that operates directly on pretrained motion generators without retraining or architectural modification.
+                        Our method counteracts semantic collapse by adaptively amplifying cross-attention scores associated with underrepresented prompt components.
+                        We note that effective modulation depends on prompt-specific choices, such as which tokens and layers to target, and introduce a lightweight auxiliary decision scheme that determines the most effective attention-strengthening parametrization.
+                        Evaluations demonstrate that MultiAct consistently outperforms existing baselines on composite prompts, achieving improved semantic coverage while preserving motion realism.
+                        Our code and data can be found at www.tbd.url.
                     </p>
                 </div>
              </div>
@@ -219,29 +199,23 @@
     </div>
 </section>
 
-<!-- Motion Transfer -->
+<!-- Composite Text-to-Motion -->
 <section class="hero is-small ">
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="content has-text-centered">
-                <h2 class="title is-3">Motion Transfer</h2>
+                <h2 class="title is-3">Composite Text-to-Motion Generation</h2>
             </div>
             <div class="content">
                 <p>
-                Leveraging our understanding of motion self-attention (detailed below), we have developed an innovative motion transfer framework, 
-                where the outline of a leader motion is transfered to a follower one, while preserving the motion motifs of the follower.
+                MultiAct is designed for prompts that describe multiple actions or modifiers simultaneously. Instead of allowing a single dominant action to override the rest, it amplifies underrepresented prompt components through attention guidance.
                 </p>
                 <p>
-                The term <b>outline</b> relates to <b>what</b> the character is doing, and <b>when</b>.
-                It provides a visual blueprint for the sequence of actions and transitions needed to execute the motion.
+                By selectively strengthening cross-attention signals for weakly represented tokens, MultiAct synthesizes motions that capture all specified semantic elements while maintaining motion realism and temporal coherence.
                 </p>
                 <p>
-                The term <b>motifs</b> relates to <b>how</b> a motion is performed.
-                It includes subtle nuances, gestures, or patterns that convey meaning and emotion. 
+                This approach mitigates semantic collapse in composite text prompts and enables more reliable generation across diverse motion descriptions.
                 </p>
-                <!-- <p>
-                The outline and motifs are implicitly derived from the leader and follower motions, respectively. 
-                 </p> -->
             </div>
         </div>
     </div>
@@ -288,12 +262,10 @@
             </div>
             <div class="content">
                 <p>
-                    The input to our model is two noisy tensors, \( X_T^\text{flw} \) and \( X_T^\text{ldr} \), produced by either inverting real motions or sampling a Gaussian noise.
-                    The two tensors represent leader and follower motions, and are given along with their associated text prompts.
-                    We initialize our output motion, \( X_T^\text{out} \), using the initial noise from the leader motion and pair it with the text prompt from the follower motion.
-                    The three noised motions \( X_t^\text{ldr} \), \( X_t^\text{flw} \) and \( X_t^\text{out} \), are passed to the frozen denoising network at each timestep \( t \), along with their prompts and with \( t \).
-                    Within the denoising network, \( X_t^\text{out} \) undergoes <b>mixed-attention</b> by combining the query from the leader motion with the key and value from the follower motion. 
-                    Meanwhile, \( X_t^\text{ldr} \) and \( X_t^\text{flw} \) follow a standard diffusion process.                
+                    MultiAct operates on a frozen text-to-motion backbone and steers generation by modulating cross-attention during inference.
+                    Given a composite text prompt, the framework selects the prompt tokens and layers where attention should be strengthened, and applies a tailored guided generation schedule.
+                    This process amplifies weak semantic components while preserving the pretrained motion generator’s structure and temporal dynamics.
+                    As a result, the generated motion better reflects all prompt details without requiring additional training or architectural changes.
                 </p>
             </div>
         </div>
@@ -310,8 +282,9 @@
             </div>
             <div class="content">
                 <p>
-                    Analyzing the profound potential embedded in the self-attention features, we show that <b>keys</b> mainly encode motion <b>motifs</b>, while <b>queries</b> mainly encapsulate its <b>outline</b>.
-                    This key insight leads the design of MoMo.
+                    MultiAct exploits the structure of cross-attention in motion diffusion models to identify which prompt components are underrepresented.
+                    By analyzing attention patterns across tokens and layers, the framework adaptively amplifies weak semantic cues while preserving temporal coherence.
+                    This attention-guided strategy enables robust generation from composite prompts.
                 </p>
             </div>
         </div>
@@ -364,12 +337,12 @@
     <div class="hero-body">
         <div class="container is-max-desktop">
             <div class="content has-text-centered">
-                <h2 class="title is-3">Special Cases of Motion Transfer</h2>
+                <h2 class="title is-3">Composite Prompt Challenges</h2>
             </div>
             <div class="content">
                 <p>
-                    Our framework offers a versatile motion transfer technique, facilitating various tasks of transferring motifs from one motion to another.
-                    Below are several tasks that constitute special cases of our framework.
+                    MultiAct is built to handle complex prompts that combine multiple actions, spatial modifiers, and style elements.
+                    The examples below illustrate how the framework maintains grounded semantics and strong prompt coverage, even when several motion components must coexist.
                 </p>
             </div>
         </div>
@@ -435,8 +408,8 @@
                     <p><b>Output</b> (vs. Leader)</p>
                 </div>
             </div>
-            <p><b>Action Transfer</b>, is where Here the leader and the follower motions are completely different, 
-                and yet the output still imitates the follower's actions, but in the same rhythm and limb order as the leader.
+            <p><b>Action Composition</b> highlights how MultiAct can satisfy multiple, distinct motion constraints in a single generated sequence.
+                The output captures the combined semantics of the prompt while maintaining a coherent overall motion.
             </p>
         </div>
     </div>
@@ -469,7 +442,7 @@
                     <p><b>Output</b> (vs. Leader)</p>
                 </div>
             </div>
-            <p><b>Style Transfer</b> refers to doing a given motion in a different way that represents an emotion or a physical state, such as ``happily'' or ``like a monkey’’.
+            <p><b>Style Transfer</b> refers to doing a given motion in a different way that reflects a change in style or expression, such as ``happily'' or ``energetically.''
             </p>
         </div>
     </div>
@@ -502,9 +475,8 @@
                     <p><b>Output</b> (vs. Leader)</p>
                 </div>
             </div>
-            <p><b>Out Of Distribution Synthesis</b> entails uncommon motions that pose a challenge to the network's generalization capabilities. 
-                In this example, the follower is the network’s attempt to generate a dancing gorilla. However, this attempt fails to dance.
-                By applying MoMo on the other hand, we generate a person that dances in the same outline as the leader, but with the motifs of the gorilla.
+            <p><b>Out-of-distribution synthesis</b> demonstrates MultiAct's ability to generate rare or unusual motion combinations from composite prompts.
+                The framework amplifies weak prompt components so the resulting motion better matches all specified behaviors, even when the backbone's default output may miss details.
             </p>
         </div>
     </div>
@@ -520,7 +492,8 @@
             </div>
             <div class="content">
                 <p>
-                    Our work stands as the sole approach capable of utilizing motion DDIM inversion within diffusion models, extending its application to both real and generated motions.
+                    MultiAct performs inference-time guidance on a pretrained motion backbone, enabling compositional synthesis without retraining.
+                    This allows the framework to operate directly on generated and real motion priors while preserving the backbone's learned motion structure.
                 </p>
             </div>
         </div>
@@ -566,11 +539,11 @@
         <h2 class="title">BibTeX</h2>
         <pre><code>
 @inproceedings{raab2024monkey,
-title={Monkey See, Monkey Do: Harnessing Self-attention in Motion Diffusion for Zero-shot Motion Transfer},
+title={MultiAct: Text-to-Motion Generation from Composite Text via Tailored Attention Guidance},
 author={Raab, Sigal and Gat, Inbar and Sala, Nathan and Tevet, Guy and Shalev-Arkushin, Rotem and Fried, Ohad and Bermano, Amit H and Cohen-Or, Daniel},
-booktitle={SIGGRAPH Asia 2024 Conference Papers},
+booktitle={SIGGRAPH Asia 2026 Conference Papers},
 pages={1--13},
-year={2024}
+year={2026}
 }
         </code></pre>
     </div>
